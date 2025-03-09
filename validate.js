@@ -1,15 +1,15 @@
 function checkSID() {
-  let sid = (document.getElementById("sid").value).trim();
-  if (sid.length == 10) {
-    return true;
-  } else {
-    return false;
-  }
+	let sid = (document.getElementById("sid").value).trim();
+	if (sid.length === 10 && /^[0-9]{10}$/.test(sid)) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 function checkCandiNo() {
   let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
+  if (isNaN(candi) || candi < 1 || candi > 10) {
     return false;
   } else {
     return true;
